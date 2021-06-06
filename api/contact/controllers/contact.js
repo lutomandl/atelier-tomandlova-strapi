@@ -19,7 +19,7 @@ const AWS_SES = new AWS.SES(SES_CONFIG);
 
 module.exports = {
   async create(ctx) {
-    const { email, message, name } = ctx.request.body;
+    const { email, message, name, captchaResponse } = ctx.request.body;
     if (!mailRegex.test(email)) {
       return { message: "Email invalid" };
     }
@@ -29,8 +29,15 @@ module.exports = {
     if (!name) {
       return { message: "Name field required" };
     }
+    const captchaResult = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_API_KEY}&response=${captchaResponse}`,
+      { method: "POST" }
+    ).then((response) => response.json());
+    if (!captchaResult.success) {
+      return reply.code(400).send("Invalid captcha.");
+    }
     const contactApi = strapi.query("contact");
-    const createEmail = await contactApi.create({ ...ctx.request.body });
+    const createEmail = await contactApi.create(email, message, name);
     try {
       const emailText = `New message from web form:\n\nEmail: ${email}\nName: ${name}\n\n${message}`;
 
