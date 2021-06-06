@@ -1,4 +1,5 @@
 "use strict";
+import fetch from "node-fetch";
 const AWS = require("aws-sdk");
 
 /**
