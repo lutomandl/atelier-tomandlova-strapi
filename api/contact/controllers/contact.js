@@ -36,7 +36,7 @@ module.exports = {
 
       const params = {
         Destination: {
-          ToAddresses: ["robinkotubej@gmail.com"],
+          ToAddresses: ["lutomandl@gmail.com"],
         },
         Message: {
           Body: {
