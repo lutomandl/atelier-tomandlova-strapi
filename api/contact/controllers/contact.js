@@ -44,7 +44,7 @@ module.exports = {
 
       const params = {
         Destination: {
-          ToAddresses: ["lutomandl@gmail.com"],
+          ToAddresses: ["info@ateliertomandlova.cz"],
         },
         Message: {
           Body: {
