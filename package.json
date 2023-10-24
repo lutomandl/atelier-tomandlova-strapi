@@ -2,7 +2,7 @@
   "name": "atelier-tomandlova-strapi",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "A Strapi application for Atelier Tomandlova website.",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -11,26 +11,21 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "strapi": "3.6.2",
-    "strapi-admin": "3.6.2",
-    "strapi-utils": "3.6.2",
-    "strapi-plugin-content-type-builder": "3.6.2",
-    "strapi-plugin-content-manager": "3.6.2",
-    "strapi-plugin-users-permissions": "3.6.2",
-    "strapi-plugin-email": "3.6.2",
-    "strapi-plugin-upload": "3.6.2",
-    "strapi-plugin-i18n": "3.6.2",
-    "strapi-connector-mongoose": "3.6.2"
+    "@strapi/plugin-graphql": "4.11.1",
+    "@strapi/plugin-i18n": "4.11.1",
+    "@strapi/plugin-users-permissions": "4.11.1",
+    "@strapi/strapi": "4.11.1",
+    "better-sqlite3": "8.0.1"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Lubos Tomandl"
   },
   "strapi": {
-    "uuid": "e3077e31-9b5a-4ffc-b7a9-751794b90eb0"
+    "uuid": "33bf362f-3930-43ba-a205-380fe81cc116"
   },
   "engines": {
-    "node": ">=10.16.0 <=14.x.x",
-    "npm": "^6.0.0"
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
   },
   "license": "MIT"
 }
